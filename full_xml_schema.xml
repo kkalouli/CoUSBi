@@ -1,0 +1,195 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+      		<titleStmt>
+        		<title xml:id="StateInitials-Year-BillNumber">Short title</title>
+        		<author>Representatives X, Y </author>
+     		 </titleStmt>
+      		<editionStmt>
+        		<edition>E</edition>
+      		</editionStmt>
+      		<publicationStmt>
+        		<pubPlace>State</pubPlace>
+        		<idno>StateInitials-Year-BillNumber</idno>
+        		<date>Year</date>
+      		</publicationStmt>
+      		<sourceDesc>
+        		<bibl>Source of the bill</bibl>
+      		</sourceDesc>
+		</fileDesc>
+	</teiHeader>
+	<text xml:lang="en">
+		<front>
+			<div1 type="abstract">
+				<head>Short abstract about the subject of the bill</head>
+      		</div1>
+		</front>
+		<body>
+			<div1>
+				<opener>
+					<salute>Opening of the bill</salute>
+       			</opener>
+        		<div2 type="section" n="1">
+          			<head>Head of the section</head>
+         			<p> Paragraph of the section</p>
+        		</div2>
+			</div1>
+		</body>
+	</text>
+</TEI>
+
+
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader xmlns:ns0="https://www.w3.org/TR/xml/" ns0:lang="en" type="1">
+    <fileDesc>
+      <titleStmt>
+        <title xmlns:ns2="https://www.w3.org/TR/xml-id/" ns2:id="NC-2007-H1500"> short title</title>
+        <author>Representatives X, Y </author>
+      </titleStmt>
+      <editionStmt>
+        <edition>X</edition>
+      </editionStmt>
+      <publicationStmt>
+        <pubPlace>State</pubPlace>
+        <idno>StateInitials-Year-BillNumber</idno>
+        <date>Year</date>
+      </publicationStmt>
+      <sourceDesc>
+        <bibl>source of the bill</bibl>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text xmlns:ns1="https://www.w3.org/TR/xml/" ns1:lang="en">
+    <front>
+      <div1 type="abstract">
+        <head>short abstract about the subject of the bill</head>
+      </div1>
+    </front>
+    <body>
+      <div1>
+        <opener>
+          <salute>Opening of the bill</salute>
+        </opener>
+        <div2 type="section" n="1">
+          <head>head of the section</head>
+          <p> different paragraphs of the section</p>
+         </div2>
+      </div1>
+    </body>
+  </text>
+</TEI>
+
+
+
+
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.tei-c.org/ns/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TEI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="teiHeader">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fileDesc">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="titleStmt">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="title">
+                            <xs:complexType>
+                              <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                  <xs:attribute ref="xml:id"/>
+                                </xs:extension>
+                              </xs:simpleContent>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="author"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="editionStmt">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="edition"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="publicationStmt">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="pubPlace"/>
+                          <xs:element type="xs:string" name="idno"/>
+                          <xs:element type="xs:string" name="date"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="sourceDesc">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="bibl"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute ref="xml:lang"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="text">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="front">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="div1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="head"/>
+                        </xs:sequence>
+                        <xs:attribute type="xs:string" name="type"/>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="body">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="div1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="opener">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="salute"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="div2">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="head"/>
+                                <xs:element type="xs:string" name="p"/>
+                              </xs:sequence>
+                              <xs:attribute type="xs:string" name="type"/>
+                              <xs:attribute type="xs:byte" name="n"/>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute ref="xml:lang"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
